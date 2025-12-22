@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Reja Application</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  html {
+    font-family: "Smooch Sans", sans-serif;
+  }
+</style>
+
+<body>
+  <div class="reja-application">
+    <div class="w-full h-screen overflow-hidden flex items-center flex-col">
+      <div class="w-[600px] min-h-[150px] border-dotted border p-6 mt-[200px]">
+        <h2 class="text-center text-3xl">Reja <span class="border-b border-purple-600 border-dotted p-0"
+            style="line-height: 0px;">Application</span></h2>
+        <form class="w-full h-auto mb-5"  id="create-form">
+          <div class="w-full flex justify-between gap-10">
+            <input id="create-input" name="reja" type="text" placeholder="Add Task"
+              class="text-xl border-b border-dotted outline-none w-full">
+            <button type="submit"
+              class="bg-gray-100 p-1 px-2 cursor-pointer text-xl border-b border-gray-300">Qo'shish</button>
+          </div>
+        </form>
+          <button class="delete-all px-2 border-none bg-orange-600 text-white uppercase cursor-pointer mt-8">Delete All Items</button>
+        </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+</html>
