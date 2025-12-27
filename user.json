@@ -1,0 +1,27 @@
+{
+  "name": "John Doe",
+  "profession": "Software Engineer",
+  "age": 30,
+  "residence": "South Korea",
+    "location": "Seoul, S.Korea",
+    "languages": ["English", "Korean", "Uzbek"],
+    "skills": {
+        "programming": ["JavaScript", "Python", "Java"],
+        "frameworks": ["Express", "Django", "Spring"],
+        "databases": ["MongoDB", "MySQL", "PostgreSQL"]
+    },
+    "extra skills": {
+        "versionControl": ["Git", "GitHub"],
+        "cloudPlatforms": ["AWS", "Azure"]
+    },
+    "work location": "Remote",
+    "hobbies": ["Reading", "Traveling", "Gaming"],
+    "goals": ["Become a team lead", "Contribute to open source", "Learn new technologies"],
+    "contact": {
+        "email": "john.doe@example.com",
+        "phone": "+82-10-1234-5678",
+        "linkedin": "linkedin.com/in/johndoe",
+        "github": "github.com/johndoe"
+    }
+}
+    
