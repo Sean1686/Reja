@@ -1,9 +1,9 @@
 {
-  "name": "John Doe",
+  "name": "John",
   "profession": "Software Engineer",
   "age": 30,
   "residence": "South Korea",
-    "location": "Seoul, S.Korea",
+    "address": "Seoul, S.K",
     "languages": ["English", "Korean", "Uzbek"],
     "skills": {
         "programming": ["JavaScript", "Python", "Java"],
