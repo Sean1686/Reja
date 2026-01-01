@@ -1,35 +1,23 @@
-console.log("Web server is running...");
-const express = require("express");
-const app = express();
 const http = require("http");
-const fs = require("fs");
+const mongodb = require("mongodb");
 
-let user;
-fs.readFile("user.json", "utf-8", (err, data) => {
-    if (!err) {
-        user = JSON.parse(data);
-    } else {
-        console.log("Error reading user.json:", err);
-    }
-});
+let db;
+const connnectionString = 
+"mongodb+srv://khudayberdi111:OR5lrZGvS6BcBJeE@cluster0.v2bx9b7.mongodb.net/reja"
 
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.set('views', 'views');
-app.set('view engine', 'ejs');
-
-app.get("/author", (req, res) => {
-    res.render("author", { user: user });
-});
-
-app.get('/', function (req, res) {
-    res.render("harid");
-});
-
+mongodb.connect(connnectionString, {
+    useNewUrlParse: true, 
+    useUnifiedTopology: true
+}, (err, client) => {
+    if(err) console.log("ERROR on connection mongoDB");
+    else {
+        console.log("MongoDB connnection secceed");
+        module.exports = client
+        const app = require("./app");
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`)
+})
+}
 });
