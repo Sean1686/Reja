@@ -22,7 +22,7 @@
       <div class="w-[600px] min-h-[150px] border-dotted border p-6 mt-[200px]">
         <h2 class="text-center text-3xl">Reja <span class="border-b border-purple-600 border-dotted p-0"
             style="line-height: 0px;">Application</span></h2>
-        <form class="w-full h-auto mb-5"  id="create-form">
+        <form class="w-full h-auto mb-5" action="/create-item" id="create-form" method="post">
           <div class="w-full flex justify-between gap-10">
             <input id="create-input" name="reja" type="text" placeholder="Add Task"
               class="text-xl border-b border-dotted outline-none w-full">
@@ -30,6 +30,23 @@
               class="bg-gray-100 p-1 px-2 cursor-pointer text-xl border-b border-gray-300">Qo'shish</button>
           </div>
         </form>
+        
+        <ul id="item-list" class="list-group pb-5">
+        <% items.map(function(item) { %>
+        <li class="list-group-item list-group-item-info flex items-center justify-between">
+            <span class="item-text"><%= item.reja %></span>
+            <div>
+            <button
+                data-id="<%=item._id %>"
+            class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
+            <button
+                data-id="<%=item._id %>"
+            class="delete-me btn btn-danger btn-sm">Delete</button>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+          
           <button class="delete-all px-2 border-none bg-orange-600 text-white uppercase cursor-pointer mt-8">Delete All Items</button>
         </div>
     </div>

@@ -20,12 +20,37 @@ app.use(express.urlencoded({ extended: true }));
 app.set('views', 'views');
 app.set('view engine', 'ejs');
 
-app.get("/author", (req, res) => {
-    res.render("author", { user: user });
+// app.get("/author", (req, res) => {
+//     res.render("author", { user: user });
+// });
+
+app.post("/create-item", (req, res) => {
+    console.log("user entered /create item");
+console.log(req.body);
+const new_reja = req.body.reja;
+db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+    if(err) {
+        console.log(err);
+        res.end("Something went wrong");
+    } else {
+        res.end("seccessfully added");
+    };
+});
 });
 
 app.get('/', function (req, res) {
-    res.render("reja");
+        console.log("user entered /");
+    db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+        if(err) {
+            console.log(err)
+            res.end('something went wrong')
+        } else {
+            console.log(data);
+                res.render("reja", {items: data});
+        }
+    });
 });
 
 module.exports = app;

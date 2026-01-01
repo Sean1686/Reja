@@ -3,10 +3,10 @@ const mongodb = require("mongodb");
 
 let db;
 const connnectionString = 
-"mongodb+srv://khudayberdi111:OR5lrZGvS6BcBJeE@cluster0.v2bx9b7.mongodb.net/reja"
+"mongodb+srv://khudayberdi111:OR5lrZGvS6BcBJeE@cluster0.v2bx9b7.mongodb.net/Reja?retryWrites=true&w=majority&appName=Reja";
 
 mongodb.connect(connnectionString, {
-    useNewUrlParse: true, 
+    useNewUrlParser: true, 
     useUnifiedTopology: true
 }, (err, client) => {
     if(err) console.log("ERROR on connection mongoDB");
