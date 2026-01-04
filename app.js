@@ -2,6 +2,7 @@ console.log("Web server is running...");
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const mongodb = require("mongodb");
 
 const db = require("./server"); // ✅ NO .db()
 
@@ -34,6 +35,16 @@ app.post("/create-item", async (req, res) => {
     console.log(err);
     res.status(500).end();
   }
+});
+
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  console.log(id)
+ db.collection("plans").deleteOne(
+  {_id: new mongodb.ObjectId(id)}, 
+function(err, response) {
+  res.json ({state: "success"})
+})
 });
 
 app.get("/", (req, res) => {

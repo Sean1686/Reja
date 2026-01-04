@@ -1,27 +1,16 @@
-// MIT task
- 
-function countLetter(e, engineer) {
-let count = 0
-for (let letter of engineer){
-    if(letter  === e) {
-    count++;
-}
-}
-    return count
-}
-console.log(countLetter("e", "engineer"));
+// MIT task C
 
+function checkContent (firststr, secondstr) {
+    if(firststr.length !== secondstr.length) return false;
 
-function countCharacter(a, mexanizatsiyalashtirmayotganinggizdarda) {
-    count = 0;
-    for(let char of mexanizatsiyalashtirmayotganinggizdarda) {
-        if(char === a) {
-            count++;
-    }
+    const sorted1 = firststr.split('').sort().join('');
+    const sorted2 = secondstr.split('').sort().join('');
+
+   return sorted1 === sorted2;
 }
-    return count
-}
-console.log(countCharacter("a", "mexanizatsiyalashtirmayotganinggizdarda"));
+console.log(checkContent("mitgroup", "timpourg"));
+console.log(checkContent("true", "eurt"));
+console.log(checkContent("hello", "world"));
 
 
 
