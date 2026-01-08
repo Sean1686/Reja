@@ -1,48 +1,64 @@
-// MITTask D
+// MITtask E
 
-class Shop {
-  constructor(pepsi, fanta, cola) {
-    this.pepsi = pepsi;
-    this.fanta = fanta;
-    this.cola = cola;
-  }
-
-  sellingTime() {
-    const now = new Date();
-    return now.getHours() + ":" + now.getMinutes();
-  }
-
-  shopQoldiq() {
-    console.log(
-      `Hozir ${this.sellingTime()} da ${this.pepsi} ta pepsi, ${this.fanta} ta fanta va ${this.cola} ta cola mahsulotlari mavjud!`
-    );
-  }
-
-  selling(product, count) {
-    this[product] -= count;
-    console.log(
-      `${this.sellingTime()} da ${count} ta ${product} sotildi!`
-    );
-  }
-
-  buying(product, count) {
-    this[product] += count;
-    console.log(
-      `${this.sellingTime()} da ${count} ta ${product} sotib olindi!`
-    );
-  }
+function reversed(word) {
+  return word.split("").reverse().join("")
 }
 
+console.log(reversed("hello"))
+console.log(reversed("teskarisi"))
 
 
-const statusof = new Shop(7, 3, 6);
 
-statusof.shopQoldiq();
 
-statusof.selling("pepsi", 2);
-statusof.buying("cola", 4);
 
-statusof.shopQoldiq();
+
+
+
+// MITTask D
+
+// class Shop {
+//   constructor(pepsi, fanta, cola) {
+//     this.pepsi = pepsi;
+//     this.fanta = fanta;
+//     this.cola = cola;
+//   }
+
+//   sellingTime() {
+//     const now = new Date();
+//     return now.getHours() + ":" + now.getMinutes();
+//   }
+
+//   shopQoldiq() {
+//     console.log(
+//       `Hozir ${this.sellingTime()} da ${this.pepsi} ta pepsi, ${this.fanta} ta fanta va ${this.cola} ta cola mahsulotlari mavjud!`
+//     );
+//   }
+
+//   selling(product, count) {
+//     this[product] -= count;
+//     console.log(
+//       `${this.sellingTime()} da ${count} ta ${product} sotildi!`
+//     );
+//   }
+
+//   buying(product, count) {
+//     this[product] += count;
+//     console.log(
+//       `${this.sellingTime()} da ${count} ta ${product} sotib olindi!`
+//     );
+//   }
+// }
+
+
+
+// const statusof = new Shop(7, 3, 6);
+
+// statusof.shopQoldiq();
+
+// statusof.selling("pepsi", 2);
+// statusof.buying("cola", 4);
+
+// statusof.shopQoldiq();
 
 
 
