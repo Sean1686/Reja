@@ -1,11 +1,27 @@
-// MITtask E
+// MITtask F
 
-function reversed(word) {
-  return word.split("").reverse().join("")
+function findDoubles(word) {
+  return new Set(word).size !== word.length;
 }
 
-console.log(reversed("hello"))
-console.log(reversed("teskarisi"))
+console.log(findDoubles("hello"));
+console.log(findDoubles("double"));
+
+
+
+
+
+
+
+
+// MITtask E
+
+// function reversed(word) {
+//   return word.split("").reverse().join("")
+// }
+
+// console.log(reversed("hello"))
+// console.log(reversed("teskarisi"))
 
 
 
